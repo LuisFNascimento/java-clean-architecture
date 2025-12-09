@@ -1,8 +1,9 @@
-package br.com.alura.codechella.domain.entities.usuario;
+package br.com.alura.codechella.core.domain.entities.usuario;
 
-import br.com.alura.codechella.domain.Address;
+import br.com.alura.codechella.core.domain.Address;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Usuario {
     private String cpf;
@@ -17,11 +18,18 @@ public class Usuario {
             throw new IllegalArgumentException("CPF inválido. Deve estar no formato XXX.XXX.XXX-XX");
         }
 
+        int idade = Period.between(nascimento, LocalDate.now()).getYears();
+
+        if (idade < 18) {
+            throw new IllegalArgumentException("Usuário deve ser maior de idade");
+        }
+
         this.cpf = cpf;
         this.nome = nome;
         this.nascimento = nascimento;
         this.email = email;
     }
+
 
     public Address getAddress() {
         return address;
