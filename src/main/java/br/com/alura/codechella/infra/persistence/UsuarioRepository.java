@@ -1,4 +1,4 @@
-package br.com.alura.codechella.naoUsar.repository;
+package br.com.alura.codechella.infra.persistence;
 
 import br.com.alura.codechella.naoUsar.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
