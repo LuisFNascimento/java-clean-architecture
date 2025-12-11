@@ -1,7 +1,7 @@
 package br.com.alura.codechella.naoUsar.service;
 
 import br.com.alura.codechella.naoUsar.model.Usuario;
-import br.com.alura.codechella.naoUsar.repository.UsuarioRepository;
+import br.com.alura.codechella.infra.persistence.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
